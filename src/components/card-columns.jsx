@@ -11,14 +11,14 @@ class CardColumn extends React.Component {
         <header>
           {title}
         </header>
-        {cards.map((card) => {
+        {cards.map((card, index) => {
           let leftArrow, rightArrow;
           if (columnNumber > 1) {
-              leftArrow = <div onClick={() => moveCard(card.key, columnNumber, -1)}>{'<'}</div>
+              leftArrow = <div onClick={() => moveCard(index, columnNumber, -1)}>{'<'}</div>
           }
 
           if (columnNumber < 4) {
-            rightArrow = <div onClick={() => moveCard(card.key, columnNumber, 1)}>{'>'}</div>
+            rightArrow = <div onClick={() => moveCard(index, columnNumber, 1)}>{'>'}</div>
           }
           return (
             <Card>

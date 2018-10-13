@@ -38,16 +38,16 @@ class Board extends React.Component {
     })
   };
 
-  moveCard = (cardId, columnNumber, direction) => {
+  moveCard = (index, columnNumber, direction) => {
     const currentBoard = `board${columnNumber}`;
     const newBoard = `board${columnNumber + direction}`;
     const currentCards = this.state[currentBoard];
 
     const newCards = this.state[newBoard];
 
-    const cardToMove = currentCards.filter((card) => card.key === cardId)[0];
+    const cardToMove = currentCards.filter((card, idx) => idx === index)[0];
 
-    const filteredCards = currentCards.filter((card) => card.key !== cardId);
+    const filteredCards = currentCards.filter((card, idx) => idx !== index);
 
     const newBoardCards = [...newCards, cardToMove]
     this.setState({
