@@ -2,23 +2,13 @@ import React from 'react';
 import Card from './card';
 import CardColumn from './card-columns';
 
-const cards1 = [];
-cards1.push(<Card key="uuid1">1</Card>);
-cards1.push(<Card key="uuid2">1 </Card>);
+const cards1 = ['content', 'test'];
 
+const cards2 = ['cards2', 'cards3'];
 
-const cards2 = [];
-cards2.push(<Card key="636251312">1</Card>);
-cards2.push(<Card key="uuid2123">1 </Card>);
+const cards3 = ['random', 'content'];
 
-
-const cards3 = [];
-cards3.push(<Card key="63622251312">1</Card>);
-cards3.push(<Card key="uui22d2123">1 </Card>);
-
-const cards4 = [];
-cards4.push(<Card key="636251211312">1</Card>);
-cards4.push(<Card key="uuid22132123">1 </Card>);
+const cards4 = [21321, '12321'];
 
 class Board extends React.Component {
   constructor () {
@@ -40,7 +30,7 @@ class Board extends React.Component {
 
     const currentBoard = `board${columnNumber}`;
     const cards = this.state[currentBoard];
-    const newCards = [...cards, (<Card key={`${Math.random() * 50000}1209353902`}>{content}</Card>)];
+    const newCards = [...cards, content];
     this.setState({
       [currentBoard]: newCards,
     }, () => {

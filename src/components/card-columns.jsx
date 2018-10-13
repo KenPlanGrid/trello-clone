@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Card from './card';
 
 class CardColumn extends React.Component {
   render () {
@@ -21,11 +21,14 @@ class CardColumn extends React.Component {
             rightArrow = <div onClick={() => moveCard(card.key, columnNumber, 1)}>{'>'}</div>
           }
           return (
-            <div className="card">
-              {leftArrow}
-             {card}
-              {rightArrow}
-            </div>)
+            <Card>
+              <div className="card">
+                {leftArrow}
+                {card}
+                {rightArrow}
+              </div>
+            </Card>
+          )
         })}
 
         <button onClick={() => addCard(columnNumber)}>
